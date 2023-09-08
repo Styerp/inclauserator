@@ -1,0 +1,18 @@
+<title>Inclauserator</title>
+<form action="/inclauserate" method="post" target="result">
+  <label for="var_name">Variable Name:</label>
+  <input type="text" name="var_name" /><br />
+  <label for="string_list">List:</label><br />
+  <textarea name="string_list"></textarea><br />
+  <input type="submit" value="Inclauserate!" />
+</form>
+<br />
+<iframe id="result" name="result" allow="clipboard-write"></iframe>
+<button onclick="copy()">Copy</button>
+
+<script>
+    function copy(){
+        var text = document.getElementById("result").contentWindow.document.body.innerText;
+        navigator.clipboard.writeText(text);
+    }
+</script>
